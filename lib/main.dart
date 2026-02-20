@@ -2041,3 +2041,512 @@ void main() {
 //     );
 //   }
 // }
+
+// // lesson 11 practising what we have studied
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.cyanAccent,
+//             ),
+//           ),
+//           leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+//           actions: [
+//             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+//             IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+//           ],
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.vertical(bottom: Radius.circular(0)),
+//           ),
+//           backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(10),
+//           margin: EdgeInsets.all(10),
+//           decoration: BoxDecoration(
+//             color: Colors.cyanAccent,
+//             border: Border.all(color: Colors.black87, width: 4),
+//           ),
+//           child: Column(
+//             children: [
+//               Container(
+//                 decoration: BoxDecoration(
+//                   color: const Color.fromARGB(255, 199, 237, 241),
+//                   border: Border.all(color: Colors.black, width: 2),
+//                 ),
+//                 margin: EdgeInsets.only(bottom: 10),
+//                 // margin: EdgeInsets.only(bottom: 10,left: 10),
+//                 padding: EdgeInsets.all(10),
+//                 width: 1000,
+//                 child: Text(
+//                   "CodyVex",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               Container(
+//                 decoration: BoxDecoration(
+//                   color: const Color.fromARGB(255, 199, 237, 241),
+//                   border: Border.all(color: Colors.black, width: 2),
+//                 ),
+//                 // padding: EdgeInsets.only(right: 20,left: 20),
+//                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+//                 margin: EdgeInsets.only(bottom: 10),
+//                 width: 1000,
+//                 child: Text(
+//                   "A comprehensive repository documenting my learning journey in Flutter and Dart, featuring projects and exercises from the 2024 course by Eng. Wael Abu Hamza.",
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+//                 ),
+//               ),
+//               Container(
+//                 decoration: BoxDecoration(
+//                   color: const Color.fromARGB(255, 199, 237, 241),
+//                   border: Border.all(color: Colors.black, width: 2),
+//                 ),
+//                 // padding: EdgeInsets.only(right: 20,left: 20),
+//                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+//                 margin: EdgeInsets.only(bottom: 10),
+//                 width: 1000,
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                   children: [
+//                     Row(
+//                       children: [
+//                         Icon(
+//                           Icons.star,
+//                           size: 20,
+//                           color: const Color.fromARGB(255, 113, 88, 226),
+//                         ),
+//                         Icon(
+//                           Icons.star,
+//                           size: 20,
+//                           color: const Color.fromARGB(255, 113, 88, 226),
+//                         ),
+//                         Icon(
+//                           Icons.star,
+//                           size: 20,
+//                           color: const Color.fromARGB(255, 113, 88, 226),
+//                         ),
+//                         Icon(
+//                           Icons.star,
+//                           size: 20,
+//                           color: const Color.fromARGB(255, 113, 88, 226),
+//                         ),
+//                         Icon(
+//                           Icons.star,
+//                           size: 20,
+//                           color: const Color.fromARGB(255, 113, 88, 226),
+//                         ),
+//                       ],
+//                     ),
+//                     Text("170 Reviews", style: TextStyle(fontSize: 16)),
+//                   ],
+//                 ),
+//               ),
+//               Container(
+//                 decoration: BoxDecoration(
+//                   color: const Color.fromARGB(255, 199, 237, 241),
+//                   border: Border.all(color: Colors.black, width: 2),
+//                 ),
+//                 // padding: EdgeInsets.only(right: 20,left: 20),
+//                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+//                 margin: EdgeInsets.only(bottom: 10),
+//                 width: 1000,
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+//                   children: [
+//                     // Spacer(),
+//                     Column(
+//                       // mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                       children: [
+//                         Icon(Icons.person, size: 20, color: Colors.green[700]),
+//                         Text("Prep", style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.bold)),
+//                         Text("25 min", style: TextStyle(fontSize: 16)),
+//                       ],
+//                     ),
+//                     // Spacer(flex: 2,),
+//                     Column(
+//                       // mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                       children: [
+//                         Icon(
+//                           Icons.menu_book_rounded,
+//                           size: 20,
+//                           color: Colors.green[700],
+//                         ),
+//                         Text("Prep", style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.bold)),
+//                         Text("50 min", style: TextStyle(fontSize: 16)),
+//                       ],
+//                     ),
+//                     // Spacer(),
+//                      Column(
+//                       // mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                       children: [
+//                         Icon(
+//                           Icons.menu_book_rounded,
+//                           size: 20,
+//                           color: Colors.green[700],
+//                         ),
+//                         Text("Prep", style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.bold)),
+//                         Text("50 min", style: TextStyle(fontSize: 16)),
+//                       ],
+//                     ),
+//                     // Spacer(),
+
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 12 (Buttons)
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: (){},
+//           child: Icon(Icons.add,size: 50,),
+//         ),
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.bold,
+//               color: const Color.fromARGB(255, 203, 215, 237),
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(10),
+//           child: ListView(
+//             children: [
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blue,
+//                 textColor: Colors.white,
+//                 // textTheme: TextTheme.lerp(4, 4, 6),
+//                 // minWidth: 200,
+//                 // height: 300,
+//                 onPressed: () {},
+//                 child: Text(
+//                   "Enter",
+//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+//                 ),
+//               ),
+//               IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.person, color: Colors.blue, size: 40),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Lesson 12 (StatefulWidget && setState)
+//wrong way
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     int i = 0;
+//     return MaterialApp(
+//       home: Scaffold(
+//         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: () {},
+//           child: Icon(Icons.add, size: 50),
+//         ),
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.bold,
+//               color: const Color.fromARGB(255, 203, 215, 237),
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(10),
+//           child: Column(
+//             children: [
+//               IconButton(
+//                 onPressed: () {
+//                   i++;
+//                   print(i);
+//                 },
+//                 icon: Icon(Icons.add),
+//               ),
+//               Text("Counter $i"),
+//               IconButton(
+//                 onPressed: () {
+//                   i--;
+//                   print(i);
+//                 },
+//                 icon: Icon(Icons.remove),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Lesson 12 (StatefulWidget && setState)
+// (right way with statefull widget)
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // int i = 0;
+  bool status = true;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {});
+            // i++;
+          },
+          child: Icon(Icons.add, size: 50),
+        ),
+        appBar: AppBar(
+          title: Text(
+            "CodyVex",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: const Color.fromARGB(255, 203, 215, 237),
+            ),
+          ),
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu, size: 40, color: Colors.white),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search, size: 40, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+            ),
+          ],
+          backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
+        ),
+        body: Container(
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  // i++;
+                  status = true;
+                  setState(() {});
+                  // print(i);
+                },
+                icon: Icon(Icons.add),
+              ),
+              status ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
+              IconButton(
+                onPressed: () {
+                  // i--;
+                  setState(() {
+                  });
+                    status = false;
+                  // print(i);
+                },
+                icon: Icon(Icons.remove),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
