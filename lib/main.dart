@@ -1654,8 +1654,7 @@ void main() {
 //   }
 // }
 
-// //Lesson 9
-// //example-3 (GridView.count)
+// //Lesson 10 (ListTile and Card Widgets)
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
 //   @override
@@ -1945,7 +1944,7 @@ void main() {
 //   }
 // }
 
-// // lesson 10 (icon and iconButton)
+// // lesson 11 (icon and iconButton)
 // class MyApp extends StatelessWidget{
 //   @override
 //   Widget build(BuildContext context){
@@ -1999,7 +1998,7 @@ void main() {
 // }
 //   }
 
-// // Lesson 10 responsive desgin
+// // Lesson 12 responsive desgin(expanded widget)
 // class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
@@ -2042,7 +2041,7 @@ void main() {
 //   }
 // }
 
-// // lesson 11 practising what we have studied
+// // lesson 13 practising what we have studied
 // class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
@@ -2212,7 +2211,7 @@ void main() {
 //   }
 // }
 
-// // lesson 12 (Buttons)
+// // lesson 14 (Buttons)
 // class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
@@ -2404,7 +2403,7 @@ void main() {
 //   }
 // }
 
-// Lesson 12 (StatefulWidget && setState)
+// Lesson 15 (StatefulWidget && setState)
 //wrong way
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
@@ -2471,8 +2470,805 @@ void main() {
 //   }
 // }
 
-// Lesson 12 (StatefulWidget && setState)
-// (right way with statefull widget)
+// // Lesson 15 (StatefulWidget && setState)
+// // (right way with statefull widget)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   // int i = 0;
+//   bool status = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+//         floatingActionButton: FloatingActionButton(
+//           onPressed: () {
+//             setState(() {});
+//             // i++;
+//           },
+//           child: Icon(Icons.add, size: 50),
+//         ),
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.bold,
+//               color: const Color.fromARGB(255, 203, 215, 237),
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(10),
+//           child: Row(
+//             children: [
+//               IconButton(
+//                 onPressed: () {
+//                   // i++;
+//                   status = true;
+//                   setState(() {});
+//                   // print(i);
+//                 },
+//                 icon: Icon(Icons.add),
+//               ),
+//               status ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
+//               IconButton(
+//                 onPressed: () {
+//                   // i--;
+//                   setState(() {
+//                   });
+//                     status = false;
+//                   // print(i);
+//                 },
+//                 icon: Icon(Icons.remove),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 16 (SwitchListTile && Switch)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   bool status = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           child: Column(
+//             children: [
+//               Container(
+//                 color: Colors.greenAccent,
+//                 width: 200,
+//                 child: SwitchListTile(
+//                   title: Text("status"),
+//                   // activeColor: Colors.green[700],
+//                   activeThumbColor: Colors.green[700],
+//                   inactiveThumbColor: Colors.black,
+//                   activeTrackColor: Colors.cyan,
+//                   inactiveTrackColor: Colors.yellow,
+//                   value: status,
+//                   onChanged: (val) {
+//                     setState(() {
+//                       status = val;
+//                     });
+//                   },
+//                 ),
+//               ),
+//               // Spacer(),
+//               Container(
+//                 margin: EdgeInsets.only(left: 20),
+//                 width: 100,
+//                 color: Colors.green,
+//                 child: Switch(
+//                   // activeColor: Colors.green[700],
+//                   activeThumbColor: Colors.green[700],
+//                   inactiveThumbColor: Colors.black,
+//                   activeTrackColor: Colors.cyan,
+//                   inactiveTrackColor: Colors.yellow,
+//                   value: status,
+//                   onChanged: (val) {
+//                     setState(() {
+//                       status = val;
+//                     });
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 17 (RadioListTile and Radio Widgets)
+// // old way (deprecateed)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   String? country;
+//   int? age;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text(
+//                 "Choose Your Country",
+//                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//               ),
+//               // Radio(
+//               //value: "Syria",
+//               // groupValue: country,
+//               //onChanged: (val) {},
+//               //),
+//               RadioListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("Syria"),
+//                 value: "Syria",
+//                 // ignore: deprecated_member_use
+//                 groupValue: country,
+//                 // ignore: deprecated_member_use
+//                 onChanged: (val) {
+//                   setState(() {
+//                     country = val;
+//                   });
+//                 },
+//               ),
+//               RadioListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("Yemen"),
+//                 value: "Yemen",
+//                 // ignore: deprecated_member_use
+//                 groupValue: country,
+//                 // ignore: deprecated_member_use
+//                 onChanged: (val) {
+//                   setState(() {
+//                     country = val;
+//                   });
+//                 },
+//               ),
+//               RadioListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("KSA"),
+
+//                 value: "KSA",
+//                 // ignore: deprecated_member_use
+//                 groupValue: country,
+//                 // ignore: deprecated_member_use
+//                 onChanged: (val) {
+//                   setState(() {
+//                     country = val;
+//                   });
+//                 },
+//               ),
+//               Text("choos your age"),
+//               RadioListTile(
+//                 title: Text("10"),
+//                 value: 10,
+//                 groupValue: age,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     age = val;
+//                   });
+//                 },
+//               ),
+//               RadioListTile(
+//                 title: Text("12"),
+//                 value: 12,
+//                 groupValue: age,
+//                 onChanged: (val) {
+//                   setState(() {
+//                   age = val;
+//                   });
+//                 },
+//               ),
+//               RadioListTile(
+//                 title: Text("14"),
+//                 value: 14,
+//                 groupValue: age,
+//                 onChanged: (val) {
+//                    setState(() {
+//                   age = val;
+//                   });
+//                 },
+//               ),
+//               Text("your country is $country and your age is $age",style:TextStyle(fontSize:40))
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 17 (RadioListTile and Radio Widgets)
+// //another way(new)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   String? country;
+//   int? age;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               Text(
+//                 "Choose Your Country",
+//                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+//               ),
+//               // Radio(
+//               //value: "Syria",
+//               // groupValue: country,
+//               //onChanged: (val) {},
+//               //),
+//               RadioGroup<String>(
+//                 groupValue: country,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     country = val;
+//                   });
+//                 },
+//                 child: Column(
+//                   children: [
+//                     RadioListTile(
+//                       contentPadding: EdgeInsets.only(bottom: 20),
+//                       activeColor: Colors.deepOrange[800],
+//                       tileColor: Colors.blueGrey,
+//                       title: Text("Syria"),
+//                       value: "Syria",
+//                     ),
+//                     RadioListTile(
+//                       contentPadding: EdgeInsets.only(bottom: 20),
+//                       activeColor: Colors.deepOrange[800],
+//                       tileColor: Colors.blueGrey,
+//                       title: Text("Yemen"),
+//                       value: "Yemen",
+//                     ),
+//                     RadioListTile(
+//                       contentPadding: EdgeInsets.only(bottom: 20),
+//                       activeColor: Colors.deepOrange[800],
+//                       tileColor: Colors.blueGrey,
+//                       title: Text("KSA"),
+//                       value: "KSA",
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               Text("choos your age"),
+//               RadioGroup<int>(
+//                 groupValue: age,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     age = val;
+//                   });
+//                 },
+//                 child: Column(
+//                   children: [
+//                     RadioListTile(title: Text("10"), value: 10),
+//                     RadioListTile(title: Text("12"), value: 12),
+//                     RadioListTile(title: Text("14"), value: 14),
+//                   ],
+//                 ),
+//               ),
+//               Text(
+//                 "your country is $country and your age is $age",
+//                 style: TextStyle(fontSize: 40),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 18 (CheckBoxListTile and CheckBox Widgets)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   bool? red = false;
+//   bool? yellow = false;
+//   bool? green = false;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "CodyVex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           child: Column(
+//             // crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               // Text("Choose your colors", style: TextStyle(fontSize: 30)),
+//               // Checkbox(
+//               //   value: status,
+//               //   onChanged: (val) {
+//               //     setState(() {
+//               //       status = val;
+//               //     });
+//               //   }
+//               // ),
+//               CheckboxListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("red"),
+//                 value: red,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     red = val;
+//                   });
+//                 },
+//               ),
+//               CheckboxListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("yellow"),
+//                 value: yellow,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     yellow = val;
+//                   });
+//                 },
+//               ),
+//               CheckboxListTile(
+//                 contentPadding: EdgeInsets.only(bottom: 20),
+//                 activeColor: Colors.deepOrange[800],
+//                 tileColor: Colors.blueGrey,
+//                 title: Text("green"),
+//                 value: green,
+//                 onChanged: (val) {
+//                   setState(() {
+//                     green = val;
+//                   });
+//                 },
+//               ),
+//               // Text("$yellow")
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 19 (stack)
+// class MyApp extends StatefulWidget {
+//   MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "Stack",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body:Container(
+//           child:Stack(
+//             clipBehavior:Clip.none,
+//             alignment:Alignment.bottomCenter,
+//             children: [
+//             Container(width:300,height:300,color:Colors.red),
+//             Container(width:250,height:200,color:Colors.blue),
+//             Container(width:200,height:100,color:Colors.green),
+//             Container(width:150,height:50,color:Colors.yellow),
+//             Positioned(
+//               left:0,
+//               right:0,
+//               bottom:-20,
+//               child:Container(width:100,height:50,color:Colors.grey)
+//             ),
+//             Positioned(
+//               left:0,
+//               right:0,
+//               top:0,
+//               child:Text("Anees",style:TextStyle(fontSize:40))
+//             )
+//           ],)
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 20 (TextField)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   // TextEditingController username = TextEditingController();
+//   // TextEditingController email = TextEditingController();
+//   String? username;
+//   String? email;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "Codyvex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: Column(
+//             children: [
+//               TextField(
+//                 // enabled:false,
+//                 // maxLength:10,
+//                 maxLines: 3,
+//                 minLines: 1,
+//                 // controller: username,//used with TextEditingController();
+//                 // keyboardType:TextInputType.datetime,
+//                 // keyboardType:TextInputType.number,
+//                 // keyboardType:TextInputType.phone,
+//                 // keyboardType:TextInputType.text,
+//                 decoration: InputDecoration(
+//                   // labelText:"Name",
+//                   // labelStyle:TextStyle(color:Color.fromARGB(255, 11, 10, 7)),
+//                   // prefix:Icon(Icons.person),
+//                   // border:OutlineInputBorder(),
+//                   // border:OutlineInputBorder(),
+//                   //   focusedBorder:OutlineInputBorder(
+//                   //     borderSide:BorderSide(color: const Color.fromARGB(255, 90, 228, 20),width:4),
+//                   //     borderRadius:BorderRadius.circular(100)
+//                   //   ),
+//                   //   enabledBorder:OutlineInputBorder(
+//                   //     borderSide:BorderSide(color: const Color.fromARGB(201, 221, 7, 7),width:5),
+//                   //     borderRadius:BorderRadius.circular(100)
+//                   //   ),
+//                   //   disabledBorder:OutlineInputBorder(
+//                   //     borderSide:BorderSide(color: const Color.fromARGB(200, 220, 170, 170),width:5),
+//                   //     borderRadius:BorderRadius.circular(20)
+//                   //   ),
+
+//                   // // border:UnderlineInputBorder(),
+//                   // fillColor:Colors.red,
+//                   // // filled:true,
+//                   // prefix:Text("ur: "),
+//                   // suffix:Icon(Icons.person),
+//                   // icon:Icon(Icons.person),
+//                   // label:Text("Name",style: TextStyle(color:Color.fromARGB(255, 11, 10, 7)),),
+//                   // hintText:"Enter your name",
+//                   // hintStyle:TextStyle(color:Colors.amber),
+//                 ),
+//               ),
+
+//               TextField(
+//                 //email
+//                 // controller: email,
+//                 onChanged: (val) {
+//                   // print(val);
+//                   email = val;
+//                   // print(email);
+//                 },
+//                 decoration: InputDecoration(
+//                   labelText: "Email",
+//                   hintText: "Enter your email",
+//                   hintStyle: TextStyle(color: Colors.redAccent),
+//                 ),
+//               ),
+//               MaterialButton(
+//                 color: Colors.blueAccent,
+//                 textColor: Colors.amber,
+//                 onPressed: () {
+//                   // print("username:" + username.text + ", email:" + email.text);
+//                   print(email);
+//                 },
+//                 child: Text("print"),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // Lesson 21 (TextFormField)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   GlobalKey<FormState> formstate = GlobalKey();
+//   String? username;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "Codyvex",
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 40,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           leading: IconButton(
+//             onPressed: () {},
+//             icon: Icon(Icons.menu, size: 40, color: Colors.white),
+//           ),
+//           actions: [
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.search, size: 40, color: Colors.white),
+//             ),
+//             IconButton(
+//               onPressed: () {},
+//               icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
+//             ),
+//           ],
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: Form(
+//             autovalidateMode: AutovalidateMode.always,
+//             key: formstate,
+//             child: Column(
+//               children: [
+//                 TextFormField(//username
+//                   // readOnly:true,
+//                   onTap: () {
+//                     print("pressed");
+//                   },
+//                   obscureText: true, //for password
+//                   validator: (value) {
+//                     if (value!.isEmpty) {
+//                       return "الحقل فارغ";
+//                     } else if (value.length > 10) {
+//                       return "النص اكبر من 10";
+//                     }
+//                     return "";
+//                   },
+//                   onSaved: (value) {
+//                     username = value;
+//                   },
+
+//                   // autovalidateMode:AutovalidateMode.always,
+//                   decoration: InputDecoration(
+//                     labelText: "Username",
+//                     hintText: "Enter your username",
+//                     hintStyle: TextStyle(color: Colors.redAccent),
+//                   ),
+//                 ),
+//                 MaterialButton(
+//                   //submit
+//                   textColor: Colors.white,
+//                   minWidth: 200,
+
+//                   color: Colors.grey,
+//                   onPressed: () {
+//                     formstate.currentState!.validate();
+//                     formstate.currentState!.save();
+//                     print(username);
+//                     // if (formstate.currentState!.validate()) {
+//                     //   print("validate");
+//                     // } else {
+//                     //   print("not validate");
+//                     // }
+//                   },
+//                   child: Text("submit", style: TextStyle(fontSize: 30)),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// Lesson 23 (Drawer)
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
   @override
@@ -2480,69 +3276,120 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // int i = 0;
-  bool status = true;
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  String? username;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {});
-            // i++;
-          },
-          child: Icon(Icons.add, size: 50),
-        ),
-        appBar: AppBar(
-          title: Text(
-            "CodyVex",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: const Color.fromARGB(255, 203, 215, 237),
-            ),
-          ),
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu, size: 40, color: Colors.white),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search, size: 40, color: Colors.white),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.more_vert, size: 40, color: Colors.white),
-            ),
-          ],
-          backgroundColor: const Color.fromRGBO(79, 63, 228, 1),
-        ),
-        body: Container(
-          padding: EdgeInsets.all(10),
-          child: Row(
+        key: scaffoldKey,
+        drawer: Drawer(
+          child: ListView(
             children: [
-              IconButton(
-                onPressed: () {
-                  // i++;
-                  status = true;
-                  setState(() {});
-                  // print(i);
-                },
-                icon: Icon(Icons.add),
+              Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 60,
+                    // color:Colors.amber,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(60),
+                      child: Image.asset(
+                        'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ListTile(
+                      title: Text("Anees"),
+                      subtitle: Text("alameryanis@gmail.com"),
+                    ),
+                  ),
+                ],
               ),
-              status ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
-              IconButton(
-                onPressed: () {
-                  // i--;
-                  setState(() {
-                  });
-                    status = false;
-                  // print(i);
-                },
-                icon: Icon(Icons.remove),
+              ListTile(
+                title:Text("home"),
+                leading:Icon(Icons.home_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
               ),
+              ListTile(
+                title:Text("Account"),
+                leading:Icon(Icons.account_balance_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
+              ),
+              ListTile(
+                title:Text("Order"),
+                leading:Icon(Icons.check_box_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
+              ),
+              ListTile(
+                title:Text("About Us"),
+                leading:Icon(Icons.help_center_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
+              ),
+              ListTile(
+                title:Text("Contact"),
+                leading:Icon(Icons.phone_android_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
+              ),
+              ListTile(
+                title:Text("SignOut"),
+                leading:Icon(Icons.exit_to_app_outlined,color:Colors.blue),
+                onTap:(){
+                  //handle 
+                }
+              ),
+            ],
+          ),
+        ),
+        // endDrawer: Drawer(),
+        //   appBar: AppBar(
+        //     title: Text(
+        //       "Codyvex",
+        //       style: TextStyle(
+        //         // color: Colors.white,
+        //         fontSize: 40,
+        //         fontWeight: FontWeight.bold,
+        //       ),
+        //     ),
+        //     titleTextStyle: TextStyle(color: Colors.brown),
+        //     centerTitle: true,
+        //     // leading:IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+        //     shadowColor: Colors.black,
+        //     elevation: 30.0,
+        //     actions: [
+        //       // IconButton(onPressed: (){},icon:Icon(Icons.list)),
+        //       // IconButton(onPressed: (){},icon:Icon(Icons.more)),
+        //       // IconButton(onPressed: (){},icon:Icon(Icons.add_shopping_cart)),
+        //     ],
+        //     backgroundColor: Colors.blue,
+        //   ),
+        body: Container(
+          padding: EdgeInsets.only(top: 25, left: 5),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Center(
+              //   child:
+              MaterialButton(
+                color: Colors.amber,
+                onPressed: () {
+                  scaffoldKey.currentState!.openDrawer();
+                  // scaffoldKey.currentState!.openEndDrawer();
+                },
+                child: Icon(Icons.menu),
+              ),
+              // ),
             ],
           ),
         ),
