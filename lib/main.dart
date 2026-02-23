@@ -1,9 +1,3 @@
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
 // Lessons 1: Hello World
 // class MyApp extends StatelessWidget {
 //   @override
@@ -3268,132 +3262,584 @@ void main() {
 //   }
 // }
 
-// Lesson 23 (Drawer)
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+// // Lesson 23 (Drawer)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
 
-class _MyAppState extends State<MyApp> {
-  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-  String? username;
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        key: scaffoldKey,
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    // color:Colors.amber,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(60),
-                      child: Image.asset(
-                        'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: ListTile(
-                      title: Text("Anees"),
-                      subtitle: Text("alameryanis@gmail.com"),
-                    ),
-                  ),
-                ],
-              ),
-              ListTile(
-                title:Text("home"),
-                leading:Icon(Icons.home_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-              ListTile(
-                title:Text("Account"),
-                leading:Icon(Icons.account_balance_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-              ListTile(
-                title:Text("Order"),
-                leading:Icon(Icons.check_box_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-              ListTile(
-                title:Text("About Us"),
-                leading:Icon(Icons.help_center_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-              ListTile(
-                title:Text("Contact"),
-                leading:Icon(Icons.phone_android_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-              ListTile(
-                title:Text("SignOut"),
-                leading:Icon(Icons.exit_to_app_outlined,color:Colors.blue),
-                onTap:(){
-                  //handle 
-                }
-              ),
-            ],
-          ),
-        ),
-        // endDrawer: Drawer(),
-        //   appBar: AppBar(
-        //     title: Text(
-        //       "Codyvex",
-        //       style: TextStyle(
-        //         // color: Colors.white,
-        //         fontSize: 40,
-        //         fontWeight: FontWeight.bold,
-        //       ),
-        //     ),
-        //     titleTextStyle: TextStyle(color: Colors.brown),
-        //     centerTitle: true,
-        //     // leading:IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
-        //     shadowColor: Colors.black,
-        //     elevation: 30.0,
-        //     actions: [
-        //       // IconButton(onPressed: (){},icon:Icon(Icons.list)),
-        //       // IconButton(onPressed: (){},icon:Icon(Icons.more)),
-        //       // IconButton(onPressed: (){},icon:Icon(Icons.add_shopping_cart)),
-        //     ],
-        //     backgroundColor: Colors.blue,
-        //   ),
-        body: Container(
-          padding: EdgeInsets.only(top: 25, left: 5),
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Center(
-              //   child:
-              MaterialButton(
-                color: Colors.amber,
-                onPressed: () {
-                  scaffoldKey.currentState!.openDrawer();
-                  // scaffoldKey.currentState!.openEndDrawer();
-                },
-                child: Icon(Icons.menu),
-              ),
-              // ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class _MyAppState extends State<MyApp> {
+//   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+//   String? username;
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         key: scaffoldKey,
+//         drawer: Drawer(
+//           child: ListView(
+//             children: [
+//               Row(
+//                 children: [
+//                   Container(
+//                     width: 60,
+//                     height: 60,
+//                     // color:Colors.amber,
+//                     child: ClipRRect(
+//                       borderRadius: BorderRadius.circular(60),
+//                       child: Image.asset(
+//                         'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//                       ),
+//                     ),
+//                   ),
+//                   Expanded(
+//                     child: ListTile(
+//                       title: Text("Anees"),
+//                       subtitle: Text("alameryanis@gmail.com"),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//               ListTile(
+//                 title:Text("home"),
+//                 leading:Icon(Icons.home_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//               ListTile(
+//                 title:Text("Account"),
+//                 leading:Icon(Icons.account_balance_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//               ListTile(
+//                 title:Text("Order"),
+//                 leading:Icon(Icons.check_box_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//               ListTile(
+//                 title:Text("About Us"),
+//                 leading:Icon(Icons.help_center_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//               ListTile(
+//                 title:Text("Contact"),
+//                 leading:Icon(Icons.phone_android_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//               ListTile(
+//                 title:Text("SignOut"),
+//                 leading:Icon(Icons.exit_to_app_outlined,color:Colors.blue),
+//                 onTap:(){
+//                   //handle
+//                 }
+//               ),
+//             ],
+//           ),
+//         ),
+//         // endDrawer: Drawer(),
+//         //   appBar: AppBar(
+//         //     title: Text(
+//         //       "Codyvex",
+//         //       style: TextStyle(
+//         //         // color: Colors.white,
+//         //         fontSize: 40,
+//         //         fontWeight: FontWeight.bold,
+//         //       ),
+//         //     ),
+//         //     titleTextStyle: TextStyle(color: Colors.brown),
+//         //     centerTitle: true,
+//         //     // leading:IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+//         //     shadowColor: Colors.black,
+//         //     elevation: 30.0,
+//         //     actions: [
+//         //       // IconButton(onPressed: (){},icon:Icon(Icons.list)),
+//         //       // IconButton(onPressed: (){},icon:Icon(Icons.more)),
+//         //       // IconButton(onPressed: (){},icon:Icon(Icons.add_shopping_cart)),
+//         //     ],
+//         //     backgroundColor: Colors.blue,
+//         //   ),
+//         body: Container(
+//           padding: EdgeInsets.only(top: 25, left: 5),
+//           child: Column(
+//             // mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               // Center(
+//               //   child:
+//               MaterialButton(
+//                 color: Colors.amber,
+//                 onPressed: () {
+//                   scaffoldKey.currentState!.openDrawer();
+//                   // scaffoldKey.currentState!.openEndDrawer();
+//                 },
+//                 child: Icon(Icons.menu),
+//               ),
+//               // ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // 24 TabbBar
+// //the first way (with DefaultTabController)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: DefaultTabController(
+//         initialIndex: 1,
+//         length: 3,
+//         child: Scaffold(
+//           appBar: AppBar(
+//             title: Text(
+//               "TabBar",
+//               style: TextStyle(color: Colors.white, fontSize: 30),
+//             ),
+//             backgroundColor: Colors.blue,
+//             bottom: TabBar(
+//               indicatorColor: Colors.amber,
+//               indicatorWeight: 3,
+//               labelColor: Colors.white, //selected
+//               labelStyle: TextStyle(fontSize: 14), //selected
+//               unselectedLabelColor: Color.fromRGBO(38, 6, 43, 1), //unselected
+//               unselectedLabelStyle: TextStyle(fontSize: 10), //unselected
+//               tabs: [
+//                 Tab(
+//                   iconMargin: EdgeInsets.all(12), //المسافة بين الايقونة والنص
+//                   // child:Icon(Icons.mobile_friendly),
+//                   icon: Icon(Icons.mobile_friendly),
+//                   text: "mobile",
+//                 ),
+//                 Tab(icon: Icon(Icons.person), text: "home"),
+//                 Tab(icon: Icon(Icons.laptop_chromebook_sharp), text: "labtop"),
+//               ],
+//             ),
+//           ),
+//           body: Container(
+//             padding: EdgeInsets.all(20),
+//             child: TabBarView(
+//               children: [
+//                 Text("CodyVex"),
+//                 // Icon(Icons.access_alarm_outlined),
+//                 Icon(Icons.person),
+//                 Icon(Icons.accessibility_sharp),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+// // 24 TabbBar
+// //the second way (with controller)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+//   TabController? tabController;
+//   @override
+//   void initState() {
+//     tabController = TabController(length: 3, vsync: this);
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "TabBar",
+//             style: TextStyle(color: Colors.white, fontSize: 30),
+//           ),
+//           backgroundColor: Colors.blue,
+//           bottom: TabBar(
+//             controller: tabController,
+//             indicatorColor: Colors.amber,
+//             indicatorWeight: 3,
+//             labelColor: Colors.white, //selected
+//             labelStyle: TextStyle(fontSize: 14), //selected
+//             unselectedLabelColor: Color.fromRGBO(38, 6, 43, 1), //unselected
+//             unselectedLabelStyle: TextStyle(fontSize: 10), //unselected
+//             tabs: [
+//               Tab(
+//                 iconMargin: EdgeInsets.all(12), //المسافة بين الايقونة والنص
+//                 // child:Icon(Icons.mobile_friendly),
+//                 icon: Icon(Icons.mobile_friendly),
+//                 text: "mobile",
+//               ),
+//               Tab(icon: Icon(Icons.home), text: "home"),
+//               Tab(icon: Icon(Icons.laptop_chromebook_sharp), text: "labtop"),
+//             ],
+//           ),
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: TabBarView(
+//             controller: tabController,
+//             children: [
+//               Column(
+//                 children: [
+//                   Text("CodyVex"),
+//                   MaterialButton(
+//                     onPressed: () {
+//                       tabController!.animateTo(1);
+//                     },
+//                     child: Text("Go to Home"),
+//                   ),
+//                 ],
+//               ),
+//               // Icon(Icons.access_alarm_outlined),
+//               Column(
+//                 children: [
+//                   Icon(Icons.person),
+//                   MaterialButton(
+//                     onPressed: () {
+//                       tabController!.animateTo(0);
+//                     },
+//                     child: Icon(Icons.mobile_friendly),
+//                   ),
+//                 ],
+//               ),
+//               Icon(Icons.accessibility_sharp),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 25: (Bottom Navigation Bar)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   int selectedIndex = 0;
+//   List<Widget> listwidget = [
+//     Text("home", style: TextStyle(color: Colors.amberAccent, fontSize: 40)),
+//     Text("setings", style: TextStyle(color: Colors.amberAccent, fontSize: 40)),
+//     Text("profile", style: TextStyle(color: Colors.amberAccent, fontSize: 40)),
+//   ];
+//   @override
+//   void initState() {
+//     selectedIndex = 0;
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         bottomNavigationBar: BottomNavigationBar(
+//           currentIndex: selectedIndex,
+//           backgroundColor: Colors.blue,
+//           selectedItemColor: Colors.white,
+//           selectedFontSize: 20,
+//           unselectedItemColor: Colors.brown,
+//           unselectedFontSize: 15,
+//           selectedLabelStyle: TextStyle(),
+//           unselectedLabelStyle: TextStyle(),
+//           onTap: (val) {
+//             setState(() {
+//               selectedIndex = val;
+//             });
+//           },
+
+//           items: [
+//             BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+//             BottomNavigationBarItem(
+//               icon: Icon(Icons.settings),
+//               label: "settings",
+//             ),
+//             BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
+//           ],
+//         ),
+//         appBar: AppBar(
+//           title: Text(
+//             "TabBar",
+//             style: TextStyle(color: Colors.white, fontSize: 30),
+//           ),
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: listwidget.elementAt(selectedIndex),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 26: (PageView)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "TabBar",
+//             style: TextStyle(color: Colors.white, fontSize: 30),
+//           ),
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: Column(
+//             children: [
+//               Container(
+//                 height: 300,
+//                 width: double.infinity,
+//                 child: PageView(
+//                   reverse:true,
+//                   // physics:BouncingScrollPhysics(),
+//                   // physics:CarouselScrollPhysics(),
+
+//                   onPageChanged: (val) {
+//                     print(val);
+//                   },
+//                   children: [
+//                     Image.asset(
+//                       'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//                       fit: BoxFit.cover,
+//                     ),
+//                     Image.asset(
+//                       'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//                       fit: BoxFit.cover,
+//                     ),
+//                     Image.asset(
+//                       'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//                       fit: BoxFit.cover,
+//                     ),
+//                     Image.asset(
+//                       'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 26: (PageViewBuilder)
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   List listImages = [
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//     'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//   ];
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "TabBar",
+//             style: TextStyle(color: Colors.white, fontSize: 30),
+//           ),
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: Column(
+//             children: [
+//               Container(
+//                 height: 300,
+//                 width: double.infinity,
+//                 child: PageView.builder(
+//                   reverse: true,
+
+//                   // physics:BouncingScrollPhysics(),
+//                   // physics:CarouselScrollPhysics(),
+//                   onPageChanged: (val) {
+//                     print(val);
+//                   },
+//                   itemCount:listImages.length,
+//                   itemBuilder: (context, index) {
+//                     return Image.asset(listImages[index],fit:BoxFit.cover);
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 27: (Custom Widget)
+// // import 'package:flutter_learning_journey_wael_abu_hamza/customcard.dart';
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             "TabBar",
+//             style: TextStyle(color: Colors.white, fontSize: 30),
+//           ),
+//           backgroundColor: Colors.blue,
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.all(20),
+//           child: Column(
+//             children: [
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//               CustomWidget(
+//                 name: "Anees",
+//                 date: "2026-2-23",
+//                 email: "anees@gmail.com",
+//                 image: 'images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png',
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// // lesson 28: (Navigator)
+// // main.dart
+// import 'package:flutter/material.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Home(),
+//     );
+//   }
+// }
