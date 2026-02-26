@@ -60,6 +60,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/Gemini_Generated_Image_rt1lcrt1lcrt1lcr.png
+    - images/5a4244f818ce7e85ae60ddef.png
+    - images/5a42458f18ce7e85ae60ddf0.png
+    - images/58ac50400aaa10546adf271b.png
+    - images/58adef56e612507e27bd3c26.png
+    - images/58adef80e612507e27bd3c2a.png
+    - images/61d4a3a08b51e20004664d48.png
+    - images/61d4a8b48b51e20004664d4f.png
+    - images/61d4a3348b51e20004664d47.png
+    - images/580b585b2edbce24c47b27bb.png
+    - images/580b585b2edbce24c47b27bd.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

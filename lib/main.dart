@@ -3664,6 +3664,10 @@
 // }
 
 // // lesson 26: (PageViewBuilder)
+// import 'package:flutter/material.dart';
+// void main(){
+//     runApp(MyApp());
+// }
 // class MyApp extends StatefulWidget {
 //   const MyApp({super.key});
 //   @override
@@ -3843,3 +3847,161 @@
 //     );
 //   }
 // }
+
+// // lesson 28: (push && pushReplacement)
+
+// import 'package:flutter/material.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Home()
+
+//     );
+//   }
+// }
+
+// // lesson 29: (Navigator pop)
+
+// import 'package:flutter/material.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/about.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/contact.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Home(),
+//       routes: {
+//         "home": (context) => Home(),
+//         "about": (context) => About(),
+//         "contact": (context) => Contact(),
+//       },
+//     );
+//   }
+// }
+
+// // lesson 30: (showBottomSheet && SnackBar)
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatefulWidget {
+//   const MyApp({super.key});
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Builder(
+//         builder: (context) => Scaffold(
+//           key: scaffoldKey,
+//           appBar: AppBar(title: Text("CodyVex"), backgroundColor: Colors.blue),
+//           body: ListView(
+//             children: [
+//               // Center(
+//               //   child: MaterialButton(
+//               //     textColor: Colors.white,
+//               //     color: Colors.amber,
+//               //     onPressed: () {
+//               //       scaffoldKey.currentState!.showBottomSheet(
+//               //         (context) => Container(
+//               //           height: 400,
+//               //           width: 1000,
+//               //           color: Colors.deepPurpleAccent,
+//               //           child: Text("data", style: TextStyle(fontSize: 30)),
+//               //         ),
+//               //       );
+//               //     },
+//               //     child: Text("Show Bottom Sheet"),
+//               //   ),
+//               // ),
+//               Center(
+//                 child: MaterialButton(
+//                   textColor: Colors.white,
+//                   color: Colors.amber,
+//                   onPressed: () {
+//                     ScaffoldMessenger.of(context).showSnackBar(
+//                       (SnackBar(
+//                         content: Text("copied successfully!"),
+//                         duration: Duration(seconds: 2),
+//                         backgroundColor: Colors.green,
+//                         // action: SnackBarAction(
+//                         //   label: "Undo",
+//                         //   onPressed: () {
+//                         //     print("Undo");
+//                         //   },
+//                         // ),
+//                       )),
+//                     );
+//                   },
+//                   child: Text("Show SnackBar"),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// lesson 31: ()
+
+import 'package:flutter/material.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/details.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Home(),
+      routes:{
+        "home": (context) => Home(),
+        "details":(context) => Details(),
+      }
+      
+    );
+  }
+}
