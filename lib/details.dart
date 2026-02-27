@@ -1,3 +1,4 @@
+//details.dart
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {

@@ -72,10 +72,10 @@
 //   }
 // }
 
+// home.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/details.dart';
 
-// home.dart
 class Home extends StatefulWidget {
   const Home({super.key});
   @override
@@ -83,6 +83,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState(){
+    print(" home page");
+    super.initState();
+  }
+  
+  @override
+  void dispose(){
+    print(" home page dispose");
+    super.dispose();
+  }
+  
+  
+  
+  
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   List categories = [
     {"iconname": Icons.laptop, "title": "Computer"},
@@ -178,6 +193,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title:  Row(
+              //header
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    // keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search, size: 30),
+                      border: InputBorder.none,
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                      hint: Text(
+                        'Search',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Icon(Icons.menu, size: 50),
+                ),
+              ],
+            ),),
       key: scaffoldKey,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
@@ -207,34 +250,48 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: ListView(
           children: [
-            Row(
-              //header
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    // keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, size: 30),
-                      border: InputBorder.none,
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                      hint: Text(
-                        'Search',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Icon(Icons.menu, size: 50),
-                ),
-              ],
+             MaterialButton(
+              // minWidth:200,
+              color: Colors.black,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(
+                  context,
+                ).pushNamedAndRemoveUntil("initstateanddispose",(route)=>false);
+              },
+              child: Text(
+                "Init State",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
+            // Row(
+            //   //header
+            //   children: [
+            //     Expanded(
+            //       child: TextFormField(
+            //         // keyboardType: TextInputType.phone,
+            //         decoration: InputDecoration(
+            //           prefixIcon: Icon(Icons.search, size: 30),
+            //           border: InputBorder.none,
+            //           fillColor: Colors.grey[200],
+            //           filled: true,
+            //           hint: Text(
+            //             'Search',
+            //             style: TextStyle(
+            //               color: Colors.grey,
+            //               fontSize: 20,
+            //               fontWeight: FontWeight.bold,
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 10),
+            //       child: Icon(Icons.menu, size: 50),
+            //     ),
+            //   ],
+            // ),
             Container(
               //Categories
               margin: EdgeInsets.only(top: 30),

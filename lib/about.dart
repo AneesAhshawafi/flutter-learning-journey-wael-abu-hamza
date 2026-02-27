@@ -132,11 +132,26 @@ class About extends StatelessWidget {
                 //   MaterialPageRoute(builder: (context) => Home()),
                 //   (route) => false,
                 // );
-                Navigator.of(context).pushNamedAndRemoveUntil("home",
+                Navigator.of(context).pushNamed("home");
+              },
+              child: Text("Home (pushAndRemoveUntil)"),
+            ),
+          ),
+          Center(
+            child: MaterialButton(
+              // minWidth:200,
+              color: Colors.black,
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  "initstateanddispose",
                   (route) => false,
                 );
               },
-              child: Text("Home (pushAndRemoveUntil)"),
+              child: Text(
+                "Init State",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
         ],

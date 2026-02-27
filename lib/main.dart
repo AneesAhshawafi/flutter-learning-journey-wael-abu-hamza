@@ -3977,10 +3977,16 @@
 // }
 
 // lesson 31: ()
-
+//main.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/InitstateAndDispose.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/about.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/contact.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/details.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/popupmenubutton.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/searchdelegate.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/listgenerate.dart';
 
 void main() {
   runApp(MyApp());
@@ -3996,10 +4002,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: Searchdelegate(),
       routes:{
         "home": (context) => Home(),
         "details":(context) => Details(),
+        "about":(context)=> About(),
+        "contact" : (context)=> Contact(),
+        "initstateanddispose":(context)=> Initstateanddispose(),
+        "popupmenubutton":(context)=>Popupmenubutton(),
+        "searchdelegate":(context)=>Searchdelegate(),
       }
       
     );
