@@ -96,7 +96,7 @@ class About extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("About", style: TextStyle(fontSize: 30)),
-        backgroundColor: Colors.blueAccent,
+        // backgroundColor: Colors.blueAccent,
       ),
       body: ListView(
         children: [

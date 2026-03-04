@@ -3983,10 +3983,13 @@ import 'package:flutter_learning_journey_wael_abu_hamza/InitstateAndDispose.dart
 import 'package:flutter_learning_journey_wael_abu_hamza/about.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/contact.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/details.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/dropdownlist.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/home.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/popupmenubutton.dart';
+// import 'package:flutter_learning_journey_wael_abu_hamza/httplesson.dart';
 import 'package:flutter_learning_journey_wael_abu_hamza/searchdelegate.dart';
 // import 'package:flutter_learning_journey_wael_abu_hamza/listgenerate.dart';
+import 'package:flutter_learning_journey_wael_abu_hamza/geolocatorlesson.dart';
 
 void main() {
   runApp(MyApp());
@@ -4002,17 +4005,220 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Searchdelegate(),
-      routes:{
+      theme: ThemeData(
+        // // تخصيصات المنصة (مثل كيفية عرض شريط التمرير أو تأثيرات اللمس حسب نظام التشغيل)
+        // adaptations: const [],
+        // // تطبيق لون تراكب الارتفاع تلقائيًا في الثيم الداكن
+        // applyElevationOverlayColor: true,
+        // // تخصيص ثيم كوبرتينو (iOS) ليتناسب مع المواد التصميمية
+        // cupertinoOverrideTheme: const NoDefaultCupertinoThemeData(
+        //   primaryColor: Colors.blue,
+        // ),
+        // // ملحقات إضافية للثيم لتعريف خصائص مخصصة
+        // extensions: const <ThemeExtension<dynamic>>[],
+        // // ثيم حقول الإدخال (TextField) بشكل عام
+        // inputDecorationTheme: const InputDecorationTheme(
+        //   border: OutlineInputBorder(),
+        //   filled: true,
+        // ),
+        // // حجم المنطقة القابلة للنقر (توسيعها لتسهيل اللمس على الشاشات الصغيرة)
+        // materialTapTargetSize: MaterialTapTargetSize.padded,
+        // // سمة انتقالات الصفحات (تأثير الانتقال بين الصفحات حسب المنصة)
+        // pageTransitionsTheme: const PageTransitionsTheme(
+        //   builders: <TargetPlatform, PageTransitionsBuilder>{
+        //     TargetPlatform.android: ZoomPageTransitionsBuilder(),
+        //     TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        //   },
+        // ),
+        // // تحديد المنصة الحالية لتطبيق سلوكياتها الافتراضية
+        // platform: TargetPlatform.android,
+        // // سمة شريط التمرير (Scrollbar)
+        // scrollbarTheme: ScrollbarThemeData(
+        //   thumbColor: WidgetStateProperty.all(Colors.grey),
+        // ),
+        // // مصنع تأثيرات الحبر عند النقر (مثل Ripple Effect)
+        // splashFactory: InkRipple.splashFactory,
+        // // استخدام Material 3 (أحدث لغة تصميم من جوجل)
+        // useMaterial3: true,
+        // // كثافة العناصر المرئية (تقليل أو زيادة المسافات بين العناصر)
+        // visualDensity: VisualDensity.adaptivePlatformDensity,
+        // // مخطط الألوان الأساسي للتطبيق
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        // // سطوع الثيم (فاتح أو غامق)
+        // brightness: Brightness.light,
+        // // لون البذرة لإنشاء مخطط الألوان بالكامل
+        // colorSchemeSeed: Colors.blue,
+        // // لون خلفية العناصر التي تشبه الورق (Canvas)
+        // canvasColor: Colors.white,
+        // // لون البطاقات (Cards) في التطبيق
+        // cardColor: Colors.white,
+        // // لون العناصر المعطلة (مثل أزرار غير مفعلة)
+        // disabledColor: Colors.grey,
+        // // لون الخطوط الفاصلة في التطبيق
+        // dividerColor: Colors.grey.withOpacity(0.5),
+        // // لون التركيز عند التفاعل باستخدام لوحة المفاتيح
+        // focusColor: Colors.blue.withOpacity(0.12),
+        // // لون التمييز عند التفاعل مع العناصر
+        // highlightColor: Colors.blue.withOpacity(0.1),
+        // // لون نص التلميح (Hint) في حقول الإدخال
+        // hintColor: Colors.grey,
+        // // لون العنصر عند تمرير مؤشر الماوس فوقه
+        // hoverColor: Colors.blue.withOpacity(0.04),
+        // // اللون الأساسي للتطبيق (يفضل استخدام colorScheme الآن)
+        // primaryColor: Colors.blue,
+        // // درجة داكنة من اللون الأساسي
+        // primaryColorDark: Colors.blue.shade800,
+        // // درجة فاتحة من اللون الأساسي
+        // primaryColorLight: Colors.blue.shade100,
+        // // لوحة الألوان الأساسية
+        // primarySwatch: Colors.blue,
+        // // لون خلفية الصفحة الرئيسية (Scaffold)
+        // scaffoldBackgroundColor: Colors.white,
+        // // لون رأس الصفحة الثانوي
+        // secondaryHeaderColor: Colors.blue.shade50,
+        // // لون الظلال للعناصر المختلفة
+        // shadowColor: Colors.black,
+        // // لون تأثير الرذاذ (Splash) عند النقر على العناصر
+        // splashColor: Colors.blue.withOpacity(0.1),
+        // // لون العناصر في وضع عدم التحديد (مثل Radio Button غير مختار)
+        // unselectedWidgetColor: Colors.grey,
+        // // قائمة الخطوط البديلة في حال عدم توفر الخط الأساسي
+        // fontFamilyFallback: const ["Arial"],
+        // // سمة الأيقونات العامة في التطبيق
+        // iconTheme: const IconThemeData(color: Colors.black),
+        // // سمة الأيقونات في المناطق التي تستخدم اللون الأساسي (مثل AppBar)
+        // primaryIconTheme: const IconThemeData(color: Colors.white),
+        // // سمة النصوص في المناطق التي تستخدم اللون الأساسي
+        // primaryTextTheme: const TextTheme(
+        //   labelLarge: TextStyle(color: Colors.white),
+        // ),
+        // // نظام الطباعة الافتراضي (توزيع الخطوط وأحجامها)
+        // typography: Typography.material2021(),
+        // // سمة أيقونات الأكشن (مثل تخصيص أيقونة زر الرجوع)
+        // actionIconTheme: const ActionIconThemeData(),
+        // // سمة الشارات (Badges) التنبيهية
+        // badgeTheme: const BadgeThemeData(backgroundColor: Colors.red),
+        // // سمة لافتات التنبيه المادية (Material Banners)
+        // bannerTheme: const MaterialBannerThemeData(),
+        // // سمة شريط التطبيق السفلي (Bottom AppBar)
+        // bottomAppBarTheme: const BottomAppBarThemeData(color: Colors.white),
+        // // سمة شريط التنقل السفلي (Bottom Navigation Bar)
+        // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        //   selectedItemColor: Colors.blue,
+        // ),
+        // // سمة الورقة السفلية التي تظهر من الأسفل (Bottom Sheet)
+        // bottomSheetTheme: const BottomSheetThemeData(
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        //   ),
+        // ),
+        // // سمة الأزرار (إعدادات الأزرار العامة)
+        // buttonTheme: const ButtonThemeData(),
+        // // سمة البطاقات (Cards) وإعداداتها الافتراضية
+        // cardTheme: const CardThemeData(elevation: 4),
+        // // سمة عرض الكاروسيل (Carousel)
+        // carouselViewTheme: const CarouselViewThemeData(),
+        // // سمة مربعات الاختيار (Checkbox)
+        // checkboxTheme: const CheckboxThemeData(),
+        // // سمة الرقائق (Chips) مثل الكلمات المفتاحية
+        // chipTheme: const ChipThemeData(),
+        // // سمة جداول البيانات (DataTables)
+        // dataTableTheme: const DataTableThemeData(),
+        // // سمة منتقي التاريخ (Date Picker)
+        // datePickerTheme: const DatePickerThemeData(),
+        // // سمة المربعات الحوارية (Dialogs)
+        // dialogTheme: const DialogThemeData(),
+        // // سمة الخط الفاصل (Divider)
+        // dividerTheme: const DividerThemeData(),
+        // // سمة الدرج الجانبي (Drawer)
+        // drawerTheme: const DrawerThemeData(),
+        // // سمة القائمة المنسدلة (Dropdown Menu)
+        // dropdownMenuTheme: const DropdownMenuThemeData(),
+        // // سمة الأزرار المرتفعة (Elevated Button)
+        // elevatedButtonTheme: const ElevatedButtonThemeData(),
+        // // سمة خلايا التمدد (Expansion Tile)
+        // expansionTileTheme: const ExpansionTileThemeData(),
+        // // سمة الأزرار المملوءة (Filled Button)
+        // filledButtonTheme: const FilledButtonThemeData(),
+        // // سمة زر العمل العائم (Floating Action Button)
+        // floatingActionButtonTheme: const FloatingActionButtonThemeData(),
+        // // سمة الأزرار التي تحتوي على أيقونات
+        // iconButtonTheme: const IconButtonThemeData(),
+        // // سمة عناصر القائمة (List Tiles)
+        // listTileTheme: const ListTileThemeData(),
+        // // سمة شريط القوائم العلوي (Menu Bar)
+        // menuBarTheme: const MenuBarThemeData(),
+        // // سمة أزرار القوائم (Menu Buttons)
+        // menuButtonTheme: const MenuButtonThemeData(),
+        // // سمة القائمة المنبثقة بشكل عام
+        // menuTheme: const MenuThemeData(),
+        // // سمة شريط التنقل (Navigation Bar)
+        // navigationBarTheme: const NavigationBarThemeData(),
+        // // سمة درج التنقل (Navigation Drawer)
+        // navigationDrawerTheme: const NavigationDrawerThemeData(),
+        // // سمة شريط التنقل الجانبي (Navigation Rail)
+        // navigationRailTheme: const NavigationRailThemeData(),
+        // // سمة الأزرار ذات الحدود (Outlined Button)
+        // outlinedButtonTheme: const OutlinedButtonThemeData(),
+        // // سمة القائمة المنبثقة عند الضغط (Popup Menu)
+        // popupMenuTheme: const PopupMenuThemeData(),
+        // // سمة مؤشرات التحميل والتقدم (Progress Indicator)
+        // progressIndicatorTheme: const ProgressIndicatorThemeData(),
+        // // سمة أزرار الراديو (Radio Buttons)
+        // radioTheme: const RadioThemeData(),
+        // // سمة شريط البحث (Search Bar)
+        // searchBarTheme: const SearchBarThemeData(),
+        // // سمة عرض نتائج البحث (Search View)
+        // searchViewTheme: const SearchViewThemeData(),
+        // // سمة الأزرار المقسمة (Segmented Button)
+        // segmentedButtonTheme: const SegmentedButtonThemeData(),
+        // // سمة شريط التمرير والاختيار (Slider)
+        // sliderTheme: const SliderThemeData(),
+        // // سمة شريط التنبيهات السفلي (SnackBar)
+        // snackBarTheme: const SnackBarThemeData(),
+        // // سمة مفاتيح التشغيل والإيقاف (Switch)
+        // switchTheme: const SwitchThemeData(),
+        // // سمة شريط علامات التبويب (Tab Bar)
+        // tabBarTheme: const TabBarThemeData(),
+        // // سمة أزرار النصوص (Text Button)
+        // textButtonTheme: const TextButtonThemeData(),
+        // // سمة تحديد وتظليل النصوص (Text Selection)
+        // textSelectionTheme: const TextSelectionThemeData(),
+        // // سمة منتقي الوقت (Time Picker)
+        // timePickerTheme: const TimePickerThemeData(),
+        // // سمة أزرار التبديل (Toggle Buttons)
+        // toggleButtonsTheme: const ToggleButtonsThemeData(),
+        // // سمة تلميحات الأدوات (Tooltip) التي تظهر عند الضغط المطول
+        // tooltipTheme: const TooltipThemeData(),
+        // // سمة شريط الأزرار العملياتي (Button Bar)
+        // buttonBarTheme: const ButtonBarThemeData(),
+        // // لون خلفية المربعات الحوارية (Dialogs)
+        // dialogBackgroundColor: Colors.white,
+        // // لون مؤشر علامات التبويب للتبويب النشط
+        // indicatorColor: Colors.blue,
+        fontFamily: "Cairo",
+        appBarTheme: AppBarTheme(backgroundColor: Colors.brown),
+        textTheme: TextTheme(
+          bodySmall: TextStyle(fontSize: 20, color: Colors.black),
+          bodyMedium: TextStyle(fontSize: 30, color: const Color.fromARGB(255, 22, 38, 138)),
+          bodyLarge: TextStyle(
+            fontSize: 40,
+            color: Colors.red,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      home: GeolocatorLesson(),
+      // home: Home(),
+      routes: {
         "home": (context) => Home(),
-        "details":(context) => Details(),
-        "about":(context)=> About(),
-        "contact" : (context)=> Contact(),
-        "initstateanddispose":(context)=> Initstateanddispose(),
-        "popupmenubutton":(context)=>Popupmenubutton(),
-        "searchdelegate":(context)=>Searchdelegate(),
-      }
-      
+        "details": (context) => Details(),
+        "about": (context) => About(),
+        "contact": (context) => Contact(),
+        "initstateanddispose": (context) => Initstateanddispose(),
+        "popupmenubutton": (context) => Popupmenubutton(),
+        "searchdelegate": (context) => Searchdelegate(),
+      },
     );
   }
 }

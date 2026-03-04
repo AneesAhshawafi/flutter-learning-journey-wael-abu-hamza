@@ -7,7 +7,7 @@ class Searchdelegate extends StatefulWidget {
 }
 
 class _SearchdelegateState extends State<Searchdelegate> {
-  getAnees() {
+  String getAnees() {
     return "Anees";
   }
 

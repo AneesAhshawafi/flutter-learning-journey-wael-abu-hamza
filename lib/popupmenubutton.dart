@@ -8,7 +8,7 @@ class Popupmenubutton extends StatefulWidget {
 }
 
 class _PopupmenubuttonState extends State<Popupmenubutton> {
-  getAnees(){
+  String getAnees(){
     return "Anees";
   }
   @override
@@ -19,10 +19,10 @@ class _PopupmenubuttonState extends State<Popupmenubutton> {
         actions: [
           PopupMenuButton(
             onSelected: (val) {
-              print(val + " OnSelected");
+              print("$val OnSelected");
             },
-            onCanceled: () => print(getAnees()+" oncanceld"),
-            onOpened: () => print(getAnees()+"onpend"),
+            onCanceled: () => print("${getAnees()} oncanceld"),
+            onOpened: () => print("${getAnees()}onpend"),
             itemBuilder: (context) => [
               PopupMenuItem(
                 mouseCursor: MouseCursor.uncontrolled,
